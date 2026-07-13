@@ -23,7 +23,7 @@ def insert_course(course_name, course_duration, course_max_participants, course_
         print(err)
 
 
-def show_course_room():
+def get_courses_room():
     """shows courses with their rooms"""
     try:
         cursor.execute("""
@@ -36,11 +36,12 @@ def show_course_room():
         FROM course
         JOIN room
         ON course.RoomID = room.RoomID""")
-        rows = cursor.fetchall()
+        return cursor.fetchall()
         for tup in rows:
             print(f"{tup[0]} for {tup[1]} with max {tup[2]} participants in room {tup[3]} with size {tup[4]}")
     except mysql.connector.Error as err:
         print(err)
+        return []
 
 
 def change_course_room():

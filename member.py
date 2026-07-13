@@ -23,7 +23,7 @@ def insert_member(member_first, member_last, member_mail, member_phone, member_t
         print(err)
 
 
-def show_member_trainer():
+def get_member_trainer():
     """shows member with their trainer"""
     try:
         cursor.execute("""
@@ -38,11 +38,10 @@ def show_member_trainer():
         FROM member
         JOIN trainer
         ON member.TrainerID = trainer.TrainerID""")
-        rows = cursor.fetchall()
-        for tup in rows:
-            print(f"Member: {tup[0]} {tup[1]}, Phone: {tup[2]}, Mail: {tup[3]}, has Trainer {tup[4]} {tup[5]} with speciality {tup[6]}")
+        return cursor.fetchall()
     except mysql.connector.Error as err:
         print(err)
+        return []
 
 
 def change_trainer_of_member():

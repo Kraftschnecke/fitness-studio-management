@@ -43,7 +43,9 @@ def run():
             case 1:
                 member.add_member()
             case 2:
-                member.show_member_trainer()
+                members = member.get_member_trainer()
+                for member_data in members:
+                    print(f"Member: {member_data[0]} {member_data[1]}, Phone: {member_data[2]}, Mail: {member_data[3]}, has Trainer {member_data[4]} {member_data[5]} with speciality {member_data[6]}")
             case 3:
                 member.change_trainer_of_member()
             case 4:
@@ -51,7 +53,9 @@ def run():
             case 11:
                 trainer.add_trainer()
             case 12:
-                trainer.show_trainer()
+                trainers = trainer.get_trainers()
+                for tup in trainers:
+                    print(f"ID: {tup[0]}, Name: {tup[1]} {tup[2]}, Speciality: {tup[3]}")
             case 13:
                 trainer.change_trainer_spec()
             case 14:
@@ -59,7 +63,9 @@ def run():
             case 21:
                 course.add_course()
             case 22:
-                course.show_course_room()
+                courses = course.get_courses_room()
+                for tup in courses:
+                    print(f"{tup[0]} for {tup[1]} with max {tup[2]} participants in room {tup[3]} with size {tup[4]}")
             case 23:
                 course.change_course_room()
             case 24:
@@ -67,7 +73,9 @@ def run():
             case 31:
                 room.add_room()
             case 32:
-                room.show_rooms()
+                rooms = room.get_rooms()
+                for tup in rooms:
+                    print(f"{tup[0]}, size {tup[1]}")
             case 33:
                 room.change_room_size()
             case 34:

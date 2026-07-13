@@ -22,17 +22,16 @@ def insert_trainer(trainer_firstname, trainer_lastname, trainer_speciality):
         print(err)
 
 
-def show_trainer():
+def get_trainers():
     """shows all trainers from trainer"""
     try:
         cursor.execute("""
         SELECT *
         FROM trainer""")
-        rows = cursor.fetchall()
-        for tup in rows:
-            print(f"ID: {tup[0]}, Name: {tup[1]} {tup[2]}, Speciality: {tup[3]}")
+        return cursor.fetchall()
     except mysql.connector.Error as err:
         print(err)
+        return []
 
 
 def change_trainer_spec():

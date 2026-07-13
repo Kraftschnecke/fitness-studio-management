@@ -21,7 +21,7 @@ def insert_room(room_name, room_size):
         print(err)
 
 
-def show_rooms():
+def get_rooms():
     """shows all rooms"""
     try:
         cursor.execute("""
@@ -29,11 +29,10 @@ def show_rooms():
             room.RoomName,
             room.RoomSize
         FROM room""")
-        rows = cursor.fetchall()
-        for tup in rows:
-            print(f"{tup[0]}, size {tup[1]}")
+        return cursor.fetchall()
     except mysql.connector.Error as err:
         print(err)
+        return []
 
 
 def change_room_size():
