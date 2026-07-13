@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Add Member</h1>
+
+<form action="/add_member" method="post">
+
+    <label>Firstname</label>
+    <input name="firstname">
+
+    <br><br>
+
+    <label>Lastname</label>
+    <input name="lastname">
+
+    <br><br>
+
+    <label>EMail</label>
+    <input name="email">
+
+    <br><br>
+
+    <label>Phonenumber</label>
+    <input name="phone">
+
+    <br><br>
+
+    <label>TrainerID</label>
+    <input name="trainerid">
+
+    <br><br>
+
+    <button>Add</button>
+</form>
+{% endblock %}
