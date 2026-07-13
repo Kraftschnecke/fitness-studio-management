@@ -34,11 +34,9 @@ def get_courses_room():
             room.RoomName,
             room.RoomSize
         FROM course
-        JOIN room
+        LEFT JOIN room
         ON course.RoomID = room.RoomID""")
         return cursor.fetchall()
-        for tup in rows:
-            print(f"{tup[0]} for {tup[1]} with max {tup[2]} participants in room {tup[3]} with size {tup[4]}")
     except mysql.connector.Error as err:
         print(err)
         return []

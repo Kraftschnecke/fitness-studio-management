@@ -1,27 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Members</title>
-</head>
-<body>
-    <h1>Members</h1>
-    <table>
-        <tr>
-            <th>Firstname</th>
-            <th>Lastname</th>
-            <th>Trainer</th>
-        </tr>
-        {% for member in members %}
-        <tr>
-            <td>{{ member[0] }}</td>
-            <td>{{ member[1] }}</td>
-            <td>{{ member[4] }} {{ member[5] }}</td>
-        </tr>
-        {% endfor %}
-    </table>
+{% extends "base.html" %}
+{% block content %}
 
-    <p>Here you can manage all members</p>
+<h1>Members</h1>
 
-    <a href="/">Home</a>
-</body>
-</html>
+<table>
+    <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Trainer</th>
+        <th>Speciality</th>
+    </tr>
+    {% for member in members %}
+    <tr>
+        <td>{{ member[0] }}</td>
+        <td>{{ member[1] }}</td>
+        <td>{{ member[2] }}</td>
+        <td>{{ member[3] }}</td>
+        <td>{{ member[4] }} {{ member[5] }}</td>
+        <td>{{ member[6] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

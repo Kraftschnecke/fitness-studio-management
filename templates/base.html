@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title>Fitness Studion Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/members">Members</a>
+    <a href="/trainers">Trainers</a>
+    <a href="/courses">Courses</a>
+    <a href="/rooms">Rooms</a>
+</nav>
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>

@@ -21,17 +21,19 @@ def members():
 
 @app.route("/trainers")
 def trainers():
-    return "<h1>trainers page</h1>"
+    trainers = trainer.get_trainers()
+    return render_template("trainers.html", trainers=trainers)
 
 
 @app.route("/courses")
 def courses():
-    return "<h1>courses page</h1>"
-
+    courses = course.get_courses_room()
+    return render_template("courses.html", courses=courses)
 
 @app.route("/rooms")
 def rooms():
-    return "<h1>rooms page</h1>"
+    rooms = room.get_rooms()
+    return render_template("rooms.html", rooms=rooms)
 
 
 if __name__ == "__main__":
