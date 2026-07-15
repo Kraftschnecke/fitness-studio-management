@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Insert Trainer</h1>
+
+<form action="/insert_trainer" method="POST">
+    <label>First Name</label>
+    <input name="firstname">
+    <br><br>
+    <label>Last Name</label>
+    <input name="lastname">
+    <br><br>
+    <label>Speciality</label>
+    <input name="speciality">
+    <button>Insert</button>
+</form>
+{% endblock %}

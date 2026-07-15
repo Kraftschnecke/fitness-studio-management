@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Delete a member</h1>
+
+<form action="/delete_trainer" method="POST">
+    <label>MemberID</label>
+    <input name="member_id">
+    <button>Delete</button>
+</form>
+
+{% endblock %}

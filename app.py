@@ -57,5 +57,43 @@ def add_member():
     return render_template("add_member.html")
 
 
+@app.route("/update_trainer_of_member", methods=["GET", "POST"])
+def update_trainer_of_member():
+    if request.method == "POST":
+        memberid = request.form["memberid"]
+        member_trainerid = request.form["trainerid"]
+        member.update_trainer_of_member(
+            memberid,
+            member_trainerid
+        )
+        return redirect(url_for("members"))
+    return render_template("update_trainer_of_member.html")
+
+
+@app.route("/delete_member", methods=["GET", "POST"])
+def delete_member():
+    if request.method == "POST":
+        member_id = request.form["member_id"]
+        member.delete_member(member_id)
+        return redirect(url_for("members"))
+    return render_template("delete_member.html")
+
+
+@app.route("/insert_trainer", methods=["GET", "POST"])
+def insert_trainer():
+    if request.method == "POST":
+        firstName = request.form["firstname"]
+        lastName = request.form["lastname"]
+        speciality = request.form["speciality"]
+        trainer.insert_trainer(
+            firstName,
+            lastName,
+            speciality
+        )
+        return redirect(url_for("trainers"))
+    return render_template("insert_trainer.html")
+
+
+@
 if __name__ == "__main__":
     app.run(debug=True)

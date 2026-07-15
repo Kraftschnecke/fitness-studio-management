@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Change the trainer of a member</h1>
+
+<form action="/update_trainer_of_member" method="POST">
+    <label>Member ID</label>
+    <input name="memberid">
+    <br><br>
+    <label>TrainerID new coach</label>
+    <input name="trainerid">
+    <button>Change</button>
+</form>
+{% endblock %}
